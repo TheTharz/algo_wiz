@@ -19,3 +19,13 @@
   background: linear-gradient(to top, #FFA500, #FFD700);
   box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
 }
+
+.bar.comparing {
+  background: linear-gradient(to top, #ff6b00, #ffa500);
+  box-shadow: 0 0 20px #ff6b00;
+}
+
+.bar.swapped {
+  background: linear-gradient(to top, #00ff00, #7fff00);
+  box-shadow: 0 0 20px #00ff00;
+}
