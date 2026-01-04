@@ -1,5 +1,4 @@
 import type { JSX } from "react";
-import { useArray } from "../hooks/useArray";
 
 const BAR_WIDTH = 10;
 interface ArrayBarProps {
