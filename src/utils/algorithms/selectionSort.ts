@@ -1,4 +1,4 @@
-import { SortStep } from './types';
+import type { SortStep } from './types';
 
 export function selectionSort(array:number[]):number[]{
   const arr = [...array];

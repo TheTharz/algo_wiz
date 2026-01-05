@@ -1,7 +1,7 @@
 import { bubbleSortVisualize } from "./bubbleSort";
 import { selectionSortVisualize } from "./selectionSort";
 
-export { SortStep } from './types';
+export type { SortStep } from './types';
 
 export const sortingAlgorithms = {
   "Bubble Sort": bubbleSortVisualize,

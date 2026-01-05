@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import ArrayBars from './components/ArrayBars';
-import { sortingAlgorithms, SortingAlgorithmName } from './utils/algorithms';
+import { sortingAlgorithms, type SortingAlgorithmName } from './utils/algorithms';
 import './App.css';
 
 function App() {
