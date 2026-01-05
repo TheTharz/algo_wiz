@@ -1,3 +1,5 @@
+import { SortStep } from './types';
+
 export function bubbleSort(array:number[]):number[]{
   const arr = [...array];
   const n = arr.length;
@@ -22,13 +24,7 @@ export function bubbleSort(array:number[]):number[]{
   return arr;
 }
 
-export interface AnimationStep {
-  array: number[];
-  comparing : number[];
-  swapped : number[];
-}
-
-export function* bubbleSortVisualize(array:number[]): Generator<AnimationStep> {
+export function* bubbleSortVisualize(array:number[]): Generator<SortStep> {
   const arr = [...array];
   const n = arr.length;
 

@@ -29,3 +29,54 @@
   background: linear-gradient(to top, #00ff00, #7fff00);
   box-shadow: 0 0 20px #00ff00;
 }
+
+.app {
+  min-height: 100vh;
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 20px;
+}
+
+.app h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #FFD700;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.controls select,
+.controls button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.controls select {
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+.controls button {
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  color: #000;
+  font-weight: bold;
+}
+
+.controls button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+}
+
+.controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
