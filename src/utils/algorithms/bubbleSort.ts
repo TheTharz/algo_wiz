@@ -31,12 +31,18 @@ export function* bubbleSortVisualize(array:number[]): Generator<SortStep> {
   for(let i=0;i<n;i++){
     let isSwapped = false;
 
-    for(let j=0;j<n-i;j++){
+    for(let j=0;j<n-i-1;j++){
 
       yield {
         array:[...arr],
         comparing:[j,j+1],
-        swapped:[]
+        swapped:[],
+        metadata: {
+          currentPass: i + 1,
+          totalPasses: n,
+          sortedUpTo: n - i - 1,
+          message: `Comparing elements at index ${j} and ${j+1}`
+        }
       };
 
       if(arr[j]>arr[j+1]){
@@ -48,7 +54,13 @@ export function* bubbleSortVisualize(array:number[]): Generator<SortStep> {
         yield {
           array:[...arr],
           comparing: [],
-          swapped:[j,j+1]
+          swapped:[j,j+1],
+          metadata: {
+            currentPass: i + 1,
+            totalPasses: n,
+            sortedUpTo: n - i - 1,
+            message: `Swapped elements at index ${j} and ${j+1}`
+          }
         };
       }
 
@@ -62,6 +74,9 @@ export function* bubbleSortVisualize(array:number[]): Generator<SortStep> {
   yield {
     array:[...arr],
     comparing:[],
-    swapped:[]
+    swapped:[],
+    metadata: {
+      message: 'Sorting complete!'
+    }
   }
 }

@@ -30,12 +30,19 @@ export function* selectionSortVisualize(array:number[]):Generator<SortStep>{
   for(let i=0;i<n-1;i++){
     let minIndex = i;
 
-    for(let j=i;j<n;j++){
+    for(let j=i+1;j<n;j++){
 
       yield {
         array:[...arr],
         comparing:[minIndex,j],
-        swapped:[]
+        swapped:[],
+        metadata: {
+          currentPass: i + 1,
+          totalPasses: n - 1,
+          minIndex: minIndex,
+          sortedUpTo: i,
+          message: `Finding minimum in range [${i}, ${n-1}]. Current min at index ${minIndex}`
+        }
       };
 
       if(arr[j]<arr[minIndex]){
@@ -51,7 +58,14 @@ export function* selectionSortVisualize(array:number[]):Generator<SortStep>{
       yield {
         array:[...arr],
         comparing:[],
-        swapped:[i,minIndex]
+        swapped:[i,minIndex],
+        metadata: {
+          currentPass: i + 1,
+          totalPasses: n - 1,
+          minIndex: minIndex,
+          sortedUpTo: i + 1,
+          message: `Swapped minimum element from index ${minIndex} to position ${i}`
+        }
       };
     }
   }
@@ -59,7 +73,10 @@ export function* selectionSortVisualize(array:number[]):Generator<SortStep>{
   yield {
     array:[...arr],
     comparing:[],
-    swapped:[]
+    swapped:[],
+    metadata: {
+      message: 'Sorting complete!'
+    }
   };
 
 }
